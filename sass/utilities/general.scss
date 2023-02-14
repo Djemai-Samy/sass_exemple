@@ -1,0 +1,144 @@
+
+$utilities:(
+    "padding":(
+        "prefix":"p",
+        "values":(
+            "0":  0px,
+            "1" : $base-padding,
+            "2" : $base-padding*2,
+            "3" : $base-padding*3,
+            "4" : $base-padding*4,
+            "5" : $base-padding*5,
+        )
+    ),
+    'padding-top':(
+        "prefix":"pt",
+        "values":(
+            "0":  0px,
+            "1" : $base-padding,
+            "2" : $base-padding*2,
+            "3" : $base-padding*3,
+            "4" : $base-padding*4,
+            "5" : $base-padding*5,
+        )
+    ),
+    'padding-bottom':(
+        "prefix":"pb",
+        "values":(
+            "0":  0px,
+            "1" : $base-padding,
+            "2" : $base-padding*2,
+            "3" : $base-padding*3,
+            "4" : $base-padding*4,
+            "5" : $base-padding*5,
+        )
+    ),
+    'padding-left':(
+        "prefix":"pl",
+        "values":(
+            "0":  0px,
+            "1" : $base-padding,
+            "2" : $base-padding*2,
+            "3" : $base-padding*3,
+            "4" : $base-padding*4,
+            "5" : $base-padding*5,
+        )
+    ),
+    'padding-right':(
+        "prefix":"pr",
+        "values":(
+            "0":  0px,
+            "1" : $base-padding,
+            "2" : $base-padding*2,
+            "3" : $base-padding*3,
+            "4" : $base-padding*4,
+            "5" : $base-padding*5,
+        )
+    ),
+    "margin":(
+        "prefix":"m",
+        "values":(
+            "0":  0px,
+            "1" : $base-padding,
+            "2" : $base-padding*2,
+            "3" : $base-padding*3,
+            "4" : $base-padding*4,
+            "5" : $base-padding*5,
+        )
+    ),
+    'margin-top':(
+        "prefix":"mt",
+        "values":(
+            "0":  0px,
+            "1" : $base-padding,
+            "2" : $base-padding*2,
+            "3" : $base-padding*3,
+            "4" : $base-padding*4,
+            "5" : $base-padding*5,
+        )
+    ),
+    'margin-bottom':(
+        "prefix":"mb",
+        "values":(
+            "0":  0px,
+            "1" : $base-padding,
+            "2" : $base-padding*2,
+            "3" : $base-padding*3,
+            "4" : $base-padding*4,
+            "5" : $base-padding*5,
+        )
+    ),
+    'margin-left':(
+        "prefix":"ml",
+        "values":(
+            "0":  0px,
+            "1" : $base-padding,
+            "2" : $base-padding*2,
+            "3" : $base-padding*3,
+            "4" : $base-padding*4,
+            "5" : $base-padding*5,
+        )
+    ),
+    'margin-right':(
+        "prefix":"mr",
+        "values":(
+            "0":  0px,
+            "1" : $base-padding,
+            "2" : $base-padding*2,
+            "3" : $base-padding*3,
+            "4" : $base-padding*4,
+            "5" : $base-padding*5,
+        )
+    ),
+    
+    "font-size":(
+        "prefix":"ft",
+        "values":(
+            "sm":10px,
+            "md":20px,
+            "lg":25px,
+            "xl":40px,
+        )
+    ),
+    "display":(
+        "prefix":"dis",
+        "values":(
+            "n":none,
+            "b":block,
+            "f":flex,
+            "ib":inline-block,
+            "i":inline
+        )
+    )
+);
+
+@each $property, $map in $utilities {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values" );
+    @each $key, $val in $values {
+        .#{$prefix}-#{$key}{
+            #{$property}: $val;
+        }
+    }
+    
+}

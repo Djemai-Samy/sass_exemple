@@ -1,0 +1,100 @@
+
+*{
+    margin: 0;
+    font-family: 'Fira Sans', sans-serif;
+}
+body{
+    @include centerLayout(column);
+    @include pad-mar(10px, auto);
+    max-width: 1000px;
+    padding-top: 50px;
+}
+h1{
+    @extend %titre;
+}
+h2{
+    @extend %titre;
+    font-size: 30px;
+}
+p{
+    font-weight: 300;
+    background-color: $lightColor;
+    padding:$base-padding;
+    margin: 20px 0;
+}
+section{
+    @include centerLayout(row);
+   
+    width: 100%;
+    background-color: rgb(203, 203, 203);
+    perspective: 400px;
+    
+    .square{
+        background-color: $primaryColor;
+        height:$square-size;
+        width: $square-size;
+        transition: all .5s ease-in-out;
+        
+        &:hover{
+            background-color: $secondaryColor;
+        }
+        &-rotation{
+            transform-origin: 50% 50%;
+            $test : multiplication(3, 5);
+            @debug $test;
+            animation: loopAnimation(square-spin, 5s);
+        }
+
+        //Créer une animation qui fait bouger le carré de haut en bas. puis de gauche a droite.
+        &-translation{
+            animation: square-translate 5s linear infinite;
+        }
+
+        //square-scale: Ajouter une animation qui change la taille du carrée
+        &-scale{
+            animation: square-scale 5s linear infinite;
+        }
+    }
+}
+
+.headerImage{
+    width: 100%;
+    max-width: 800px;
+}
+.links{
+    background-color: $lightColor;
+    padding: $base-padding;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.links a{
+    text-decoration: none;
+}
+
+#html{
+    color: #E65127;
+}
+#css{
+    color: #0C73B8;
+    
+}
+#js{
+    color: #E7A328;
+}
+
+video{
+    width: 100%;
+}
+
+.blueText{
+    color: blue;
+}
+
+@media  (max-width: 800px){
+    .links{
+        display: flex;
+        flex-direction: column;
+    }
+}

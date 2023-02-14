@@ -1,0 +1,29 @@
+.card{
+    display: block;
+    box-shadow: $base-box-shadow;
+    border-radius: calc($base-border-radius / 4);
+    border: $base-border_thickness solid gray;
+    margin: $base-padding;
+    padding: $base-padding;
+    transition: all .2s ease-in-out;
+    &:hover{
+        transform: scale(1.05);
+    }
+    .card-title{
+        border-bottom: $base-border_thickness solid gray;
+        padding: $base-padding;
+        font-size: 25px;
+    }
+    .card-image{
+        width: 100%;
+    }
+    .card-body{
+        border-top: $base-border_thickness solid gray;
+        padding: $base-padding;
+    }
+    .card-footer{
+        color: gray;
+        font-size: 12px;
+        padding-top: $base-padding;
+    }
+}

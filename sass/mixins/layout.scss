@@ -1,0 +1,24 @@
+@mixin centerLayout($direction:row) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+//Créer un mixin qui prends deux paramètre; $padding, $margin:
+//Utiliser les paramètre pour mettre une margin et un padding.
+
+@mixin pad-mar($paddingValue:20px, $marginValue:10px) {
+    padding: $paddingValue;
+    margin: $marginValue;
+}
+
+
+// Extends
+%titre{
+    color: $primaryColor;
+    font-weight: bold;
+    /* text-decoration: underline; */
+    border-bottom: solid 2px $primaryColor;
+    padding: $base-padding;
+}

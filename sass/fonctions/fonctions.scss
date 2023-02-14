@@ -1,0 +1,10 @@
+@function multiplication($num1, $num2){
+    @return $num1 * $num2;
+}
+
+@function complemented($color){
+    $complementColor: complement($color);
+    $lightComplented: lighten($complementColor, 10);
+    @debug $lightComplented;
+    @return $lightComplented;
+}

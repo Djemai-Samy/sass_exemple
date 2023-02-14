@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!--Police Google-->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,500;1,300;1,500&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!--Notre style-->
+		<link rel="stylesheet" href="./styles/styles.css" />
+
+		<!--Scripts-->
+		<script src="./js/navbar.js" defer></script>
+
+		<title>Transformations:</title>
+	</head>
+	<body>
+		<nav>
+			<img src="./assets/menu.svg" />
+			<p class="logo">Brand</p>
+			<div>
+				<a href="/">Acceuil</a>
+				<a href="./transformations.html">Transformations CSS</a>
+				<a href="./showcase.html">Notre Showcase</a>
+			</div>
+		</nav>
+
+		<section>
+			<h2>Rotation</h2>
+			<div class="square square-rotation"></div>
+		</section>
+
+		<section>
+			<h2>Translation</h2>
+			<div class="square square-translation"></div>
+		</section>
+
+		<section>
+			<h2>Scale</h2>
+			<div class="square square-scale"></div>
+		</section>
+
+		<div class="wrap">
+			<div class="cube">
+				<div class="front">
+					<h1>Test</h1>
+				</div>
+				<div class="left"></div>
+				<div class="back"></div>
+				<div class="right"></div>
+			</div>
+		</div>
+		<button id="animationButton">STOP/START</button>
+
+		<script>
+			document.querySelector("#animationButton").addEventListener("click", function () {
+				let animations = document.getAnimations();
+				console.log(animations[3]);
+				if (animations[3].playState == "running") {
+					animations[3].pause();
+				} else {
+					animations[3].play();
+				}
+			});
+		</script>
+	</body>
+</html>

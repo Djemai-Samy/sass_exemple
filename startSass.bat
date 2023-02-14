@@ -1,0 +1,1 @@
+sass --watch ./sass/global.scss ./styles/styles.css

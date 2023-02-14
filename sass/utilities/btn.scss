@@ -1,0 +1,53 @@
+@mixin btn($bgColor) {
+    background-color: $bgColor;
+}
+
+%btnPlaceHolder{
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    padding: $base-padding* 1.5;
+    border-radius: $base-border-radius * 4;
+    transition: all .2s ease-in-out;
+    min-width: 100px;
+}
+
+.btn{
+    @extend %btnPlaceHolder;
+    @include btn(rgb(204, 204, 204));
+    &:hover{
+        background-color: lighten(rgb(204, 204, 204), 15)
+    }
+}
+
+@each $cle, $value in $colors {
+    .btn-#{$cle}{
+        @extend %btnPlaceHolder;
+        @include btn($value);
+
+        &:hover{
+            background-color: lighten($value, 15);
+        }
+        &-outlined{
+            @extend %btnPlaceHolder;
+            @include btn(transparent);
+            border: solid 1px $value;
+          
+            &:hover{
+                background-color: $value;
+            }
+        }
+        &-complemented{
+         
+            @extend %btnPlaceHolder;
+            @include btn($value);
+            color: complemented($value);
+            &:hover{
+                background-color: complemented($value);
+                color: $value;
+            }
+        }
+    }
+
+}
